@@ -1,0 +1,104 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+input[type="text"] {
+  width: calc(100% - 80px);
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #66afe9;
+}
+
+button {
+  padding: 8px 16px; /* Adjusted button padding */
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center; /* Centering the list */
+}
+
+li {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centering list items */
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li button {
+  margin-left: 10px;
+}
+
+li button:hover {
+  filter: brightness(90%);
+}
+
+.input-text,
+button {
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.item-name {
+  font-size: 28px;
+  font-weight: 400;
+  color: #333;
+  margin-right: 10px; /* Added margin to item name for separation */
+}
+
+.found-text,
+.not-found-text {
+  font-weight: bold;
+  font-size: 24px;
+  color: #333; /* Changed text color */
+  margin-left: 10px; /* Added margin to text for separation */
+}
+
+.found-text {
+  color: #28a745
+}
+
+.not-found-text {
+  color: #dc3545;
+}
