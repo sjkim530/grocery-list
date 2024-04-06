@@ -19,6 +19,11 @@ db.serialize(() => {
 
 app.use(bodyParser.json());
 
+// Define a default GET route for the root path "/"
+app.get('/', (req, res) => {
+    res.send('Server is running!'); // Send a simple text response
+});
+
 // API endpoint to get the current shopping list
 app.get('/shopping_list', (req, res) => {
     db.all("SELECT * FROM shopping_list", (err, rows) => {
