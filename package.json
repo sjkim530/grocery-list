@@ -2,6 +2,7 @@
   "name": "shopping-list",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sjkim530.github.io/grocery-list",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -20,9 +21,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node server.js",
-    "client": "react-scripts start"
+    "client": "react-scripts start",
+    "deploy": "gh-pages -d build",
+    "start": "npm run server"
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +46,7 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "gh-pages": "^6.1.1"
   }
 }
