@@ -96,9 +96,17 @@ button {
 }
 
 .found-text {
-  color: #28a745
+  color: #28a745;
 }
 
 .not-found-text {
   color: #dc3545;
+}
+
+.reset-button {
+  background-color: #008080;
+  margin-left: 10px; /* Add margin between add and reset buttons */
+  margin-top: 10px; /* Add margin from the top */
+  display: block; /* Change button display to block */
+  margin: 0 auto; /* Center horizontally */
 }

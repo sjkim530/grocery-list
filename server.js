@@ -36,7 +36,7 @@ app.get('/shopping_list', (req, res) => {
 });
 
 // API endpoint to update item status
-app.post('/update_item_status/:id', (req, res) => {
+app.put('/update_item_status/:id', (req, res) => {
     const { id } = req.params;
     const { found } = req.body;
     db.run("UPDATE shopping_list SET found = ? WHERE id = ?", [found, id], function(err) {
