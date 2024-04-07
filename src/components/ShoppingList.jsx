@@ -12,7 +12,7 @@ const ShoppingList = () => {
 
   useEffect(() => {
     fetchShoppingList();
-  }, []);
+  }, [shoppingList]);
 
   const fetchShoppingList = async () => {
     try {
@@ -38,7 +38,7 @@ const ShoppingList = () => {
     const items = inputValue.split(',').map(item => item.trim());
     try {
       await axios.post(`${SERVER_URL}/add_items`, { items });
-      fetchShoppingList();
+      console.log("shoppingList", shoppingList)
       setInputValue('');
     } catch (error) {
       console.error('Error adding items:', error);
