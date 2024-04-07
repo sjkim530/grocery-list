@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ShoppingListItem from './ShoppingListItem';
 
-// const SERVER_URL = 'https://frozen-plateau-76692-65dc75c7b7d2.herokuapp.com';
+const SERVER_URL = 'https://frozen-plateau-76692-65dc75c7b7d2.herokuapp.com';
 
-const SERVER_URL = process.env.REACT_APP_SERVER_URL
+// const SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 const ShoppingList = () => {
   const [shoppingList, setShoppingList] = useState([]);
