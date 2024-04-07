@@ -36,9 +36,10 @@ app.get('/shopping_list', (req, res) => {
 });
 
 // API endpoint to update item status
-app.post('/update_item_status', (req, res) => {
-    const { item, found } = req.body;
-    db.run("UPDATE shopping_list SET found = ? WHERE item = ?", [found, item], function(err) {
+app.post('/update_item_status/:id', (req, res) => {
+    const { id } = req.params;
+    const { found } = req.body;
+    db.run("UPDATE shopping_list SET found = ? WHERE id = ?", [found, id], function(err) {
         if (err) {
             res.status(500).json({ error: err.message });
             return;
@@ -77,19 +78,18 @@ app.delete('/delete_item/:id', (req, res) => {
   });
 });
 
-// API endpoint to edit an item's status in the shopping list
-app.put('/edit_item/:id', (req, res) => {
-  const id = req.params.id;
-  const { found } = req.body;
-  db.run("UPDATE shopping_list SET found = ? WHERE id = ?", [found, id], function(err) {
+// API endpoint to reset the shopping list
+app.delete('/reset_list', (req, res) => {
+  db.run("DELETE FROM shopping_list", function(err) {
       if (err) {
           res.status(500).json({ error: err.message });
           return;
       }
-      res.json({ message: "Item status updated successfully" });
+      res.json({ message: "Shopping list reset successfully" });
   });
 });
 
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
 });
+

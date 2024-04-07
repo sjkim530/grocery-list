@@ -1,24 +1,28 @@
+import React from 'react';
+
 const ShoppingListItem = ({ item, updateItemStatus, handleDelete }) => {
-  const handleClick = () => {
-      updateItemStatus(item.item, !item.found);
+  const handleCheckboxChange = () => {
+    updateItemStatus(item);
   };
 
   const handleDeleteClick = () => {
     handleDelete(item);
-};
+  };
 
-return (
-  <li>
+  return (
+    <li>
+      <input
+        type="checkbox"
+        checked={item.found}
+        onChange={handleCheckboxChange}
+      />
       <span className="item-name">{item.item}</span> -
       <span className={item.found ? 'found-text' : 'not-found-text'}>
-          {item.found ? ' Found' : ' Not Found'}
+        {item.found ? ' Found' : ' Not Found'}
       </span>
-      <button onClick={handleClick}>
-          {item.found ? 'Mark as Not Found' : 'Mark as Found'}
-      </button>
       <button onClick={handleDeleteClick} className="delete-button">Delete</button>
-  </li>
-);
+    </li>
+  );
 };
 
 export default ShoppingListItem;

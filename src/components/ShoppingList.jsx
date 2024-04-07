@@ -51,6 +51,15 @@ const ShoppingList = () => {
       }
   };
 
+  const handleReset = async () => {
+    try {
+      await axios.delete(`${SERVER_URL}/reset_list`);
+      fetchShoppingList();
+    } catch (error) {
+      console.error('Error resetting list:', error);
+    }
+  };
+
   return (
     <div className="container">
         <h1>장보기</h1>
@@ -64,6 +73,9 @@ const ShoppingList = () => {
             />
             <button type="submit" className="add-button">Add Items</button>
         </form>
+        {shoppingList.length > 0 &&
+        <button onClick={handleReset} className="reset-button">Reset List</button>
+        }
         <ul>
             {shoppingList.map(item => (
                 <ShoppingListItem
